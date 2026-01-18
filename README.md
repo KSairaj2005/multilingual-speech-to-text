@@ -1,11 +1,26 @@
-# Multi-Lingual-Speech-Recognition
+# Multilingual Speech-to-Text System
 
-This repository can be used to perform Speech to Text Conversion in multiple Languages, e.g., It can convert whatever you are speaking in Telugu, Hindi, Tamil, Kannada  or English into Text!
+A Python-based application that converts spoken audio into text across multiple languages using speech recognition techniques. Designed for voice-driven and accessibility-focused applications.
 
-Google Language Codes for different Languages:
-https://cloud.google.com/speech-to-text/docs/languages
-PYTHON --version == 3.6
+## Features
+- Converts speech to text
+- Supports multiple languages
+- Works with audio input files
+- Simple and user-friendly workflow
 
-while installing pyaudio
+## Tech Stack
+- Python
+- Speech Recognition
+- Audio Processing
 
-conda install pyaudio
+## How to Run
+1. Install dependencies:
+   pip install -r requirements.txt
+2. Run the application:
+   python speech_to_text.py
+
+## Use Cases
+- Voice assistants
+- Audio transcription
+- Accessibility tools
+- Language learning
