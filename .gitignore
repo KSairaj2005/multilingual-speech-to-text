@@ -1,0 +1,3 @@
+.spyproject/
+*.zip
+__pycache__/
