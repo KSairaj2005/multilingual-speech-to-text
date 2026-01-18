@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: "Poppins", sans-serif; }
+
+        body {
+            height: 100vh;
+            background: radial-gradient(circle at top, #02201a 0%, #000b08 60%, #000000 100%);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+            padding: 20px;
+        }
+
+        .glow-band {
+            position: absolute;
+            width: 170%;
+            height: 170%;
+            background: conic-gradient(
+                from 0deg,
+                #00ffc8 0deg, transparent 90deg,
+                #00ffc8 180deg, transparent 270deg,
+                #00ffc8 360deg
+            );
+            top: -35%;
+            left: -35%;
+            opacity: .06;
+            animation: spin 23s linear infinite;
+            z-index: 0;
+        }
+        @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+
+        .grid {
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(rgba(0,255,160,.09) 1px, transparent 1px);
+            background-size: 22px 22px;
+            z-index: 1;
+        }
+
+        .card {
+            position: relative;
+            z-index: 5;
+            width: 420px;
+            padding: 32px;
+            border-radius: 14px;
+            background: rgba(0,0,0,0.55);
+            border: 1px solid rgba(0,255,175,0.25);
+            box-shadow: 0px 0px 25px rgba(0,255,160,0.12);
+            backdrop-filter: blur(14px);
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 26px;
+            margin-bottom: 25px;
+            color: #00ffb2;
+            font-weight: 600;
+        }
+
+        label {
+            display: block;
+            text-align: left;
+            font-size: 15px;
+            margin-bottom: 8px;
+            opacity: .95;
+        }
+
+        select {
+            width: 100%;
+            padding: 12px;
+            background: rgb(57, 232, 103);
+            border: none;
+            border-radius: 6px;
+            outline: none;
+            margin-bottom: 25px;
+            color: rgb(2, 0, 0);
+            font-size: 15px;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            border-radius: 6px;
+            border: none;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            background: #00ffb2;
+            color: black;
+            transition: .2s;
+        }
+
+        button:hover {
+            background: #00ffd0;
+            transform: translateY(-2px);
+        }
+
+        .logout {
+            display: block;
+            margin-top: 20px;
+            color: #00ffb2;
+            font-size: 15px;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .logout:hover { text-decoration: underline; }
+    </style>
+</head>
+
+<body>
+
+    <div class="glow-band"></div>
+    <div class="grid"></div>
+
+    <div class="card">
+        <h2>Dashboard</h2>
+
+        <form method="POST">
+            <label for="language">Choose Language</label>
+            <select name="language" id="language" required>
+                <option disabled selected>Select Language</option>
+                <option value="en">English</option>
+                <option value="hi">Hindi</option>
+                <option value="te">Telugu</option>
+                <option value="ta">Tamil</option>
+                <option value="kn">Kannada</option>
+            </select>
+
+            <button type="submit">Start Speech Recognition</button>
+        </form>
+
+        <a class="logout" href="/logout">Logout</a>
+    </div>
+
+</body>
+</html>

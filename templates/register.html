@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: "Poppins", sans-serif; }
+
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: radial-gradient(circle at top, #02201a 0%, #000b08 60%, #000000 100%);
+            color: white;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .glow-band {
+            position: absolute;
+            width: 160%;
+            height: 160%;
+            background: conic-gradient(
+                from 0deg,
+                #00ffc8 0deg, transparent 90deg,
+                #00ffc8 180deg, transparent 270deg,
+                #00ffc8 360deg
+            );
+            top: -30%;
+            left: -30%;
+            opacity: .06;
+            animation: rotateGlow 18s linear infinite;
+            z-index: 0;
+        }
+        @keyframes rotateGlow {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .grid-dots {
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(rgba(0,255,160,.09) 1px, transparent 1px);
+            background-size: 22px 22px;
+            z-index: 1;
+        }
+
+        .card {
+            position: relative;
+            z-index: 3;
+            width: 420px;
+            padding: 32px;
+            border-radius: 14px;
+            background: rgba(0,0,0,0.52);
+            backdrop-filter: blur(14px);
+            border: 1px solid rgba(0,255,175,0.22);
+            box-shadow: 0px 0px 25px rgba(0,255,160,0.12);
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: #00ffb2;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 6px;
+            text-align: left;
+            font-size: 14px;
+            opacity: .95;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            border-radius: 6px;
+            border: none;
+            outline: none;
+            margin-bottom: 15px;
+            font-size: 14px;
+            background: rgba(255,255,255,0.09);
+            color: white;
+        }
+
+        input::placeholder {
+            color: rgba(255,255,255,0.6);
+        }
+
+        .btn-register {
+            width: 100%;
+            background: #00ffb2;
+            color: black;
+            font-weight: 600;
+            border-radius: 6px;
+            padding: 10px 0;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: .2s ease;
+        }
+
+        .btn-register:hover {
+            background: #00ffd0;
+            transform: translateY(-2px);
+        }
+
+        .link {
+            margin-top: 13px;
+            font-size: 14px;
+        }
+
+        .link a {
+            color: #00ffb2;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="glow-band"></div>
+    <div class="grid-dots"></div>
+
+    <div class="card">
+        <h2>Create Account</h2>
+
+        <form method="POST">
+            <label for="username">Username</label>
+            <input type="text" name="username" placeholder="Choose a username" required>
+
+            <label for="password">Password</label>
+            <input type="password" name="password" placeholder="Create a password" required>
+
+            <button class="btn-register" type="submit">Register</button>
+        </form>
+
+        <div class="link">
+            Already registered? <a href="/login">Login here</a>
+        </div>
+    </div>
+
+</body>
+</html>

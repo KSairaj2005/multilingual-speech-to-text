@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Welcome</title>
+
+    <!-- Fonts + Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: "Poppins", sans-serif; }
+
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: radial-gradient(circle at top, #02201a 0%, #000b08 60%, #000000 100%);
+            color: white;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Smooth moving gradient band */
+        .glow-band {
+            position: absolute;
+            width: 160%;
+            height: 160%;
+            background: conic-gradient(
+                from 0deg,
+                #00ffc8 0deg, transparent 90deg,
+                #00ffc8 180deg, transparent 270deg,
+                #00ffc8 360deg
+            );
+            top: -30%;
+            left: -30%;
+            opacity: .05;
+            animation: rotateGlow 18s linear infinite;
+            z-index: 0;
+        }
+        @keyframes rotateGlow {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        /* Subtle tech dots */
+        .grid-dots {
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(rgba(0,255,160,.08) 1px, transparent 1px);
+            background-size: 22px 22px;
+            z-index: 1;
+        }
+
+        /* Glass futuristic card */
+        .card {
+            position: relative;
+            z-index: 3;
+            width: 440px;
+            padding: 38px 30px;
+            border-radius: 16px;
+            background: rgba(0,0,0,0.52);
+            backdrop-filter: blur(14px);
+            border: 1px solid rgba(0,255,175,0.22);
+            box-shadow: 0px 0px 25px rgba(0,255,160,0.12);
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 26px;
+            font-weight: 700;
+            margin-bottom: 6px;
+            color: #00ffb2;
+            text-shadow: 0px 0px 8px rgba(0,255,150,0.4);
+        }
+
+        p {
+            font-size: 14px;
+            opacity: .92;
+            margin-bottom: 24px;
+        }
+
+        a {
+            display: block;
+            text-decoration: none;
+            padding: 12px;
+            border-radius: 6px;
+            font-weight: 600;
+            margin-top: 10px;
+            transition: .2s;
+        }
+
+        .btn-login {
+            background: #00ffb2;
+            color: black;
+        }
+
+        .btn-login:hover {
+            background: #00ffd0;
+            transform: translateY(-2px);
+        }
+
+        .btn-register {
+            border: 2px solid #00ffb2;
+            color: #00ffb2;
+        }
+
+        .btn-register:hover {
+            background: #00ffb2;
+            color: black;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="glow-band"></div>
+    <div class="grid-dots"></div>
+
+    <div class="card">
+        <h2><i class="bi bi-soundwave"></i> Multi-Lingual Speech Recognition</h2>
+        <p>Talk to computers, get answers like humans.</p>
+
+        <a href="/login" class="btn-login">Login</a>
+        <a href="/register" class="btn-register">Register</a>
+    </div>
+
+</body>
+</html>
